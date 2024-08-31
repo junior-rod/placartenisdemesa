@@ -1,89 +1,149 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
+    android:background="@color/background"
     android:padding="16dp">
-
-    <TextView
-        android:id="@+id/tv_nome_torneio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Torneio"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/tv_jogador_um"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jogador 1"
-        android:textSize="24sp"
-        android:layout_marginBottom="16dp"
-        android:onClick="onPontoJogadorUmClick"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/tv_sets_jogador_um"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sets: 0"
-            android:textSize="18sp"
-            android:layout_marginEnd="16dp"/>
-
-        <TextView
-            android:id="@+id/tv_pontos_jogador_um"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pontos: 0"
-            android:textSize="18sp"
-            android:onClick="onPontoJogadorUmClick"/>
-    </LinearLayout>
 
     <Button
         android:id="@+id/btn_desfazer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desfazer último ponto"
         android:layout_marginVertical="24dp"
-        android:onClick="onDesfazerClick"/>
+        android:layout_marginTop="62dp"
+        android:layout_marginBottom="46dp"
+        android:onClick="onDesfazerClick"
+        android:text="Desfazer último ponto"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_jogador_dois"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_jogador_um"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/img_pingpong"
+        android:layout_width="317dp"
+        android:layout_height="164dp"
+        android:src="@mipmap/pinpong"
+        app:layout_constraintBottom_toTopOf="@+id/tv_jogador_um"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nome_torneio" />
+
+    <TextView
+        android:id="@+id/tv_nome_torneio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="19dp"
+        android:text="Torneio"
+        android:textColor="@color/texto"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/img_pingpong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_jogador_um"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Jogador 1"
+        android:textColor="@color/texto"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_jogador_um"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_jogador_um"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@color/avermelhado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_jogador_um">
+
+        <TextView
+            android:id="@+id/tv_sets_jogador_um"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+
+            android:text="Sets: 0"
+            android:textColor="@color/background"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_pontos_jogador_um"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onPontoJogadorUmClick"
+            android:text="Pontos: 0"
+            android:textColor="@color/background"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_jogador_dois"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
         android:text="Jogador 2"
+        android:textColor="@color/texto"
+        android:textStyle="bold"
         android:textSize="24sp"
-        android:layout_marginBottom="16dp"
-        android:onClick="onPontoJogadorDoisClick"/>
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_jogador_dois"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout_jogador_dois"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="196dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:background="@color/avermelhado"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/tv_sets_jogador_dois"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:text="Sets: 0"
-            android:textSize="18sp"
-            android:layout_marginEnd="16dp"/>
+            android:textColor="@color/background"
+            android:textStyle="bold"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tv_pontos_jogador_dois"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onPontoJogadorDoisClick"
             android:text="Pontos: 0"
-            android:textSize="18sp"
-            android:onClick="onPontoJogadorDoisClick"/>
-
+            android:textColor="@color/background"
+            android:textStyle="bold"
+            android:textSize="18sp" />
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
