@@ -6,22 +6,6 @@
     android:background="@color/background"
     android:padding="16dp">
 
-    <Button
-        android:id="@+id/btn_desfazer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="24dp"
-        android:layout_marginTop="62dp"
-        android:layout_marginBottom="46dp"
-        android:onClick="onDesfazerClick"
-        android:text="Desfazer último ponto"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tv_jogador_dois"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout_jogador_um"
-        app:layout_constraintVertical_bias="0.0" />
-
     <ImageView
         android:id="@+id/img_pingpong"
         android:layout_width="317dp"
@@ -48,13 +32,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+
+
+    <Button
         android:id="@+id/tv_jogador_um"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:textColor="@color/background"
+        android:backgroundTint="@color/avermelhado"
+        android:backgroundTintMode="add"
         android:text="Jogador 1"
-        android:textColor="@color/texto"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout_jogador_um"
@@ -70,7 +58,7 @@
         android:textStyle="bold"
         android:gravity="center"
         android:orientation="horizontal"
-        android:background="@color/avermelhado"
+        android:background="@color/texto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,13 +86,15 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <TextView
+    <Button
         android:id="@+id/tv_jogador_dois"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/avermelhado"
+        android:backgroundTintMode="add"
         android:text="Jogador 2"
-        android:textColor="@color/texto"
+        android:textColor="@color/background"
         android:textStyle="bold"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout_jogador_dois"
@@ -117,9 +107,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="196dp"
+        android:background="@color/texto"
         android:gravity="center"
         android:orientation="horizontal"
-        android:background="@color/avermelhado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -132,8 +122,8 @@
             android:layout_marginEnd="16dp"
             android:text="Sets: 0"
             android:textColor="@color/background"
-            android:textStyle="bold"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_pontos_jogador_dois"
@@ -142,8 +132,24 @@
             android:onClick="onPontoJogadorDoisClick"
             android:text="Pontos: 0"
             android:textColor="@color/background"
-            android:textStyle="bold"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_desfazer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="24dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginBottom="62dp"
+        android:onClick="onDesfazerClick"
+        android:text="Desfazer último ponto"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_jogador_dois"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_jogador_um"
+        app:layout_constraintVertical_bias="0.222" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
