@@ -2,7 +2,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/background">
+
+    <ImageView
+        android:id="@+id/img_pingpong"
+        android:layout_width="216dp"
+        android:layout_height="148dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+
+        android:src="@mipmap/pinpong" />
+
+    <TextView
+        android:id="@+id/tv_criar_nova_partida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Criar nova partida"
+        android:textColor="@color/texto"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
 
     <EditText
         android:id="@+id/et_nome_torneio"
@@ -30,10 +51,12 @@
         android:layout_height="wrap_content"
         android:text="Começar Partida"
         android:layout_marginTop="24dp" />
+
     <Button
         android:id="@+id/btn_voltar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Voltar"
         android:layout_marginTop="24dp" />
+
 </LinearLayout>
