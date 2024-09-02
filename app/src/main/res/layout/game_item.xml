@@ -9,6 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nome do Torneio"
+        android:textColor="@color/texto"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp"/>
@@ -16,6 +17,7 @@
     <TextView
         android:id="@+id/tv_jogadores"
         android:layout_width="wrap_content"
+        android:textColor="@color/avermelhado"
         android:layout_height="wrap_content"
         android:text="Jogadores"
         android:textSize="18sp"
@@ -26,12 +28,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sets"
+        android:textStyle="bold"
         android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/tv_pontos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="Pontos"
         android:textSize="16sp"/>
 </LinearLayout>
