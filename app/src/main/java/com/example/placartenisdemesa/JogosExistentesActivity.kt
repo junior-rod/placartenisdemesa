@@ -35,7 +35,6 @@ class JogosExistentesActivity : AppCompatActivity() {
     private fun carregarJogosSalvos() {
         val sharedPreferences = getSharedPreferences("placar_tenis_de_mesa", MODE_PRIVATE)
         val gson = Gson()
-
         val allEntries = sharedPreferences.all
         for ((key, value) in allEntries) {
             val json = value as String
@@ -46,10 +45,11 @@ class JogosExistentesActivity : AppCompatActivity() {
                 gameDataMap["nomeTorneio"] as? String ?: "Nome do torneio desconhecido.",
                 gameDataMap["jogador_um"] as String,
                 gameDataMap["jogador_dois"] as String,
-                (gameDataMap["sets_jogador_um"] as Double).toInt(),
-                (gameDataMap["sets_jogador_dois"] as Double).toInt(),
-                (gameDataMap["pontos_jogador_um"] as Double).toInt(),
-                (gameDataMap["pontos_jogador_dois"] as Double).toInt()
+                (gameDataMap["sets_jogador_um"] as? Double)?.toInt() ?: 0,
+                (gameDataMap["sets_jogador_dois"] as? Double)?.toInt() ?: 0,
+                (gameDataMap["pontos_jogador_um"] as? Double)?.toInt() ?:0,
+                (gameDataMap["pontos_jogador_dois"] as? Double)?.toInt() ?: 0,
+                (gameDataMap["quantidade_sets"] as? Double)?.toInt() ?: 0
             )
             gamesList.add(gameData)
         }
@@ -62,13 +62,3 @@ class JogosExistentesActivity : AppCompatActivity() {
         startActivity(intent)
     }
 }
-
-//data class GameData(
-//    val id: String,
-//    val jogadorUm: String,
-//    val jogadorDois: String,
-//    val setsJogadorUm: Int,
-//    val setsJogadorDois: Int,
-//    val pontosJogadorUm: Int,
-//    val pontosJogadorDois: Int
-//)

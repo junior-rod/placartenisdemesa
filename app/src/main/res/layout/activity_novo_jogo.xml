@@ -47,7 +47,18 @@
         android:hint="Nome do Jogador 2"
         android:layout_marginTop="16dp" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quantidade de Sets"
+        android:textSize="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
     <RadioGroup
+        android:id="@+id/rgQuantidadeSets"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -82,7 +93,6 @@
             android:layout_weight="1"
             android:text="7 Sets" />
     </RadioGroup>
-
 
     <Button
         android:id="@+id/btn_comecar_jogo"

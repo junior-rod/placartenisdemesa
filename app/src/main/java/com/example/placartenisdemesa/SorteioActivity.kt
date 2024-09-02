@@ -22,6 +22,7 @@ class SorteioActivity : AppCompatActivity() {
         val nomeTorneio = intent.getStringExtra("nome_torneio")
         val jogadorUm = intent.getStringExtra("jogador_um")
         val jogadorDois = intent.getStringExtra("jogador_dois")
+        val quantidadeSets = intent.getIntExtra("quantidade_sets", 1)
 
         Handler(Looper.getMainLooper()).postDelayed({
             val jogadorInicial = if (Random.nextBoolean()) jogadorUm else jogadorDois
@@ -32,6 +33,7 @@ class SorteioActivity : AppCompatActivity() {
                 jogoIntent.putExtra("jogador_um", jogadorUm)
                 jogoIntent.putExtra("jogador_dois", jogadorDois)
                 jogoIntent.putExtra("nome_torneio", nomeTorneio)
+                jogoIntent.putExtra("quantidade_sets", quantidadeSets)
                 startActivity(jogoIntent)
                 finish()
             }, 2000)
