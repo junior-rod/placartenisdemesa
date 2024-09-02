@@ -3,7 +3,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:gravity="center_horizontal"
+    >
 
     <ImageView
         android:id="@+id/img_pingpong"
@@ -44,6 +46,43 @@
         android:layout_height="wrap_content"
         android:hint="Nome do Jogador 2"
         android:layout_marginTop="16dp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="1 Set" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3 Sets" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5 Sets" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="7 Sets" />
+    </RadioGroup>
+
 
     <Button
         android:id="@+id/btn_comecar_jogo"
