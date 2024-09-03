@@ -4,6 +4,24 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <ImageView
+        android:id="@+id/img_pingpong"
+        android:layout_width="216dp"
+        android:layout_height="148dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+
+        android:src="@mipmap/pinpong" />
+    <TextView
+        android:id="@+id/tv_criar_nova_partida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regras"
+        android:textColor="@color/texto"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -12,7 +30,8 @@
             android:id="@+id/tv_rules"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A partida constitui-se de 7 sets de 11 (onze) pontos. No caso de empate em 10 pontos, o vencedor será o que fizer 2 pontos consecutivos primeiro.."
+            android:textStyle = "bold"
+            android:text="A partida constitui-se de 1, 3, 5 ou 7 sets de 11 (onze) pontos. No caso de empate em 10 pontos, o vencedor será o que fizer 2 pontos consecutivos primeiro."
             android:layout_marginTop="30dp"/>
     </ScrollView>
 

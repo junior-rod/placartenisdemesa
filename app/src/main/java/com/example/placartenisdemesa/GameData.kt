@@ -11,13 +11,15 @@ class GameData(
     val setsJogadorUm: Int,
     val setsJogadorDois: Int,
     val pontosJogadorUm: Int,
-    val pontosJogadorDois: Int
+    val pontosJogadorDois: Int,
+    val quantidadeSets: Int
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readString() ?: "",
+        parcel.readInt(),
         parcel.readInt(),
         parcel.readInt(),
         parcel.readInt(),
@@ -33,6 +35,7 @@ class GameData(
         parcel.writeInt(setsJogadorDois)
         parcel.writeInt(pontosJogadorUm)
         parcel.writeInt(pontosJogadorDois)
+        parcel.writeInt(quantidadeSets)
     }
 
     override fun describeContents(): Int {

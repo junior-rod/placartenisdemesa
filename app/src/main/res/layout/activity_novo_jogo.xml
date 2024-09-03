@@ -2,7 +2,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/background"
+    android:gravity="center_horizontal"
+    >
+
+    <ImageView
+        android:id="@+id/img_pingpong"
+        android:layout_width="216dp"
+        android:layout_height="148dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+
+        android:src="@mipmap/pinpong" />
+
+    <TextView
+        android:id="@+id/tv_criar_nova_partida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Criar nova partida"
+        android:textColor="@color/texto"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
 
     <EditText
         android:id="@+id/et_nome_torneio"
@@ -24,16 +47,67 @@
         android:hint="Nome do Jogador 2"
         android:layout_marginTop="16dp" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quantidade de Sets"
+        android:textSize="25dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <RadioGroup
+        android:id="@+id/rgQuantidadeSets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="1 Set" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3 Sets" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5 Sets" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="7 Sets" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/btn_comecar_jogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Começar Partida"
+        android:textStyle="bold"
         android:layout_marginTop="24dp" />
+
     <Button
         android:id="@+id/btn_voltar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Voltar"
+        android:textStyle="bold"
         android:layout_marginTop="24dp" />
+
 </LinearLayout>

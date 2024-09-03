@@ -5,10 +5,33 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+
+    <ImageView
+        android:id="@+id/img_pingpong"
+        android:layout_width="216dp"
+        android:layout_height="148dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+
+        android:src="@mipmap/pinpong" />
+
+    <TextView
+        android:id="@+id/tv_criar_nova_partida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jogos existentes"
+        android:textColor="@color/texto"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_jogos_existentes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/texto"
+        android:textStyle="bold"
         android:layout_marginTop="16dp"/>
 
     <Button
@@ -16,5 +39,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Voltar"
+        android:textStyle="bold"
         android:layout_marginTop="24dp" />
 </LinearLayout>

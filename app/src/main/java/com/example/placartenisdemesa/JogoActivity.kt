@@ -10,10 +10,14 @@ import com.google.gson.Gson
 
 class JogoActivity : AppCompatActivity() {
     lateinit var binding: ActivityJogoBinding
+    private lateinit var nomeTorneio: String
+    private lateinit var jogadorUm: String
+    private lateinit var jogadorDois: String
     private var setsJogadorUm = 0
     private var setsJogadorDois = 0
     private var pontosJogadorUm = 0
     private var pontosJogadorDois = 0
+    private var quantidadeSets = 1
     private val historicoPontos = mutableListOf<Pair<String, Int>>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,22 +39,16 @@ class JogoActivity : AppCompatActivity() {
             setsJogadorDois = gameData.setsJogadorDois
             pontosJogadorUm = gameData.pontosJogadorUm
             pontosJogadorDois = gameData.pontosJogadorDois
+            quantidadeSets = gameData.quantidadeSets
             atualizar()
         } else {
-
-            val jogadorUm = intent.getStringExtra("jogador_um") ?: "Jogador 1"
-            val jogadorDois = intent.getStringExtra("jogador_dois") ?: "Jogador 2"
+            nomeTorneio = intent.getStringExtra("nome_torneio") ?: "Torneio"
+            jogadorUm = intent.getStringExtra("jogador_um") ?: "Jogador 1"
+            jogadorDois = intent.getStringExtra("jogador_dois") ?: "Jogador 2"
+            quantidadeSets = intent.getIntExtra("quantidade_sets", 1)
             binding.tvJogadorUm.text = jogadorUm
             binding.tvJogadorDois.text = jogadorDois
         }
-        binding.tvJogadorUm.setOnClickListener { incrementarPonto("jogador_um") }
-        binding.tvPontosJogadorUm.setOnClickListener { incrementarPonto("jogador_dois") }
-        binding.tvJogadorDois.setOnClickListener { incrementarPonto("jogador_um") }
-        binding.tvPontosJogadorDois.setOnClickListener { incrementarPonto("jogador_dois") }
-
-        val nomeTorneio = intent.getStringExtra("nome_torneio") ?: "Torneio"
-        val jogadorUm = intent.getStringExtra("jogador_um") ?: "Jogador 1"
-        val jogadorDois = intent.getStringExtra("jogador_dois") ?: "Jogador 2"
 
         binding.tvNomeTorneio.text = nomeTorneio
         binding.tvJogadorUm.text = jogadorUm
@@ -93,8 +91,8 @@ class JogoActivity : AppCompatActivity() {
             }
             pontosJogadorUm = 0
             pontosJogadorDois = 0
-            if (setsJogadorUm == 4 || setsJogadorDois == 4) {
-                val vencedor = if (setsJogadorUm == 4) "jogador_um" else "jogador_dois"
+            if (setsJogadorUm == (quantidadeSets + 1)/2 || setsJogadorDois == (quantidadeSets + 1)/2) {
+                val vencedor = if (setsJogadorUm == (quantidadeSets + 1)/2) "jogador_um" else "jogador_dois"
                 mostrarVencedor(vencedor)
             }
         }
